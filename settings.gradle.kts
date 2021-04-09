@@ -20,7 +20,5 @@ pluginManagement {
 rootProject.name = ("androidshowcase")
 
 include(
-    "app",
-    "library-android",
-    "library-kotlin"
+    "app"
 )

@@ -1,16 +1,12 @@
-import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
-
 plugins {
     id("com.android.application") apply false
     id("com.android.library") apply false
     kotlin("android") apply false
     id("io.gitlab.arturbosch.detekt") version BuildPluginsVersion.DETEKT
     id("org.jlleitschuh.gradle.ktlint") version BuildPluginsVersion.KTLINT
-    id("com.github.ben-manes.versions") version BuildPluginsVersion.VERSIONS_PLUGIN
 }
 
 allprojects {
-    group = PUBLISHING_GROUP
     repositories {
         google()
         mavenCentral()
@@ -22,7 +18,6 @@ subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
         plugin("org.jlleitschuh.gradle.ktlint")
-        plugin("com.github.ben-manes.versions")
     }
 
     ktlint {
@@ -53,11 +48,5 @@ subprojects {
 tasks {
     register("clean", Delete::class.java) {
         delete(rootProject.buildDir)
-    }
-
-    withType<DependencyUpdatesTask> {
-        rejectVersionIf {
-            candidate.version.isStableVersion().not()
-        }
     }
 }

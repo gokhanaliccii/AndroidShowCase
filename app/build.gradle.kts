@@ -36,26 +36,10 @@ android {
         isWarningsAsErrors = true
         isAbortOnError = true
     }
-
-    // Use this block to configure different flavors
-//    flavorDimensions("version")
-//    productFlavors {
-//        create("full") {
-//            dimension = "version"
-//            applicationIdSuffix = ".full"
-//        }
-//        create("demo") {
-//            dimension = "version"
-//            applicationIdSuffix = ".demo"
-//        }
-//    }
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk7"))
-
-    implementation(project(":library-android"))
-    implementation(project(":library-kotlin"))
 
     implementation(SupportLibs.ANDROIDX_APPCOMPAT)
     implementation(SupportLibs.ANDROIDX_CONSTRAINT_LAYOUT)
