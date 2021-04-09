@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -44,8 +45,15 @@ dependencies {
     implementation(SupportLibs.ANDROIDX_APPCOMPAT)
     implementation(SupportLibs.ANDROIDX_CONSTRAINT_LAYOUT)
     implementation(SupportLibs.ANDROIDX_CORE_KTX)
+    implementation(SupportLibs.ANDROIDX_FRAGMENT_KTX)
+    implementation(SupportLibs.ANDROIDX_VIEW_MODEL)
+    implementation(SupportLibs.ANDROIDX_LIVE_DATA)
+    implementation(SupportLibs.ANDROIDX_VIEW_MODEL_STATE)
+
+    kapt(Kapts.ANDROIDX_LIFECYCLE_COMPILER)
 
     testImplementation(TestingLib.JUNIT)
+    testImplementation(TestingLib.ARCHITECTURE_COMPONENTS)
 
     androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_EXT_JUNIT)
     androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_RULES)
