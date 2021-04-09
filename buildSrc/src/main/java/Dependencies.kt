@@ -16,6 +16,7 @@ object Versions {
     const val JUNIT = "4.13.2"
     const val KTLINT = "0.40.0"
     const val ARCHITECTURE_COMPONENTS = "2.1.0"
+    const val NAVIGATION_COMPONENTS = "2.3.5"
 }
 
 object BuildPluginsVersion {
@@ -31,6 +32,8 @@ object SupportLibs {
     const val ANDROIDX_VIEW_MODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.ANDROIDX_LIFECYCLE}"
     const val ANDROIDX_LIVE_DATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.ANDROIDX_LIFECYCLE}"
     const val ANDROIDX_VIEW_MODEL_STATE = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.ANDROIDX_LIFECYCLE}"
+    const val ANDROIDX_NAVIGATION_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.ANDROIDX_LIFECYCLE}"
+    const val ANDROIDX_NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:${Versions.ANDROIDX_LIFECYCLE}"
 }
 
 object Kapts{

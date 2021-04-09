@@ -49,6 +49,8 @@ dependencies {
     implementation(SupportLibs.ANDROIDX_VIEW_MODEL)
     implementation(SupportLibs.ANDROIDX_LIVE_DATA)
     implementation(SupportLibs.ANDROIDX_VIEW_MODEL_STATE)
+    implementation(SupportLibs.ANDROIDX_NAVIGATION_FRAGMENT)
+    implementation(SupportLibs.ANDROIDX_NAVIGATION_UI)
 
     kapt(Kapts.ANDROIDX_LIFECYCLE_COMPILER)
 
