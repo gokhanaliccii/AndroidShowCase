@@ -57,8 +57,9 @@ dependencies {
     implementation(SupportLibs.ANDROIDX_VIEW_MODEL_STATE)
     implementation(SupportLibs.ANDROIDX_NAVIGATION_FRAGMENT)
     implementation(SupportLibs.ANDROIDX_NAVIGATION_UI)
-    implementation(CoroutineLibs.COROUTINE)
     implementation(SupportLibs.DAGGER_HILT)
+    implementation(CoroutineLibs.COROUTINE)
+    implementation(ImageLoadingLibs.COIL)
 
     kapt(Kapts.ANDROIDX_LIFECYCLE_COMPILER)
     kapt(Kapts.DAGGER_HILT)

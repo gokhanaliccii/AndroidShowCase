@@ -19,6 +19,7 @@ object Versions {
     const val ARCHITECTURE_COMPONENTS = "2.1.0"
     const val NAVIGATION_COMPONENTS = "2.3.5"
     const val DAGGER_HILT = "2.34-beta"
+    const val COIL = "1.1.1"
 }
 
 object BuildPluginsVersion {
@@ -37,6 +38,10 @@ object SupportLibs {
     const val ANDROIDX_NAVIGATION_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_COMPONENTS}"
     const val ANDROIDX_NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION_COMPONENTS}"
     const val DAGGER_HILT = "com.google.dagger:hilt-android:${Versions.DAGGER_HILT}"
+}
+
+object ImageLoadingLibs{
+    const val COIL = "io.coil-kt:coil:${Versions.COIL}"
 }
 
 object CoroutineLibs{
