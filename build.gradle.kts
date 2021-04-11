@@ -1,7 +1,4 @@
 plugins {
-    id("com.android.application") apply false
-    id("com.android.library") apply false
-    kotlin("android") apply false
     id("io.gitlab.arturbosch.detekt") version BuildPluginsVersion.DETEKT
     id("org.jlleitschuh.gradle.ktlint") version BuildPluginsVersion.KTLINT
 }
@@ -11,6 +8,17 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
+    }
+}
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.33-beta")
     }
 }
 
