@@ -1,3 +1,5 @@
+import Secrets.NY_TIMES_API_KEY
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -11,6 +13,8 @@ android {
     defaultConfig {
         minSdkVersion(Sdk.MIN_SDK_VERSION)
         targetSdkVersion(Sdk.TARGET_SDK_VERSION)
+
+        buildConfigField("String", "NY_TIMES_API_KEY", "\"$NY_TIMES_API_KEY\"")
 
         applicationId = AppCoordinates.APP_ID
         versionCode = AppCoordinates.APP_VERSION_CODE
