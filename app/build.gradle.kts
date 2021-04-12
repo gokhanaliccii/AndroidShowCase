@@ -60,6 +60,10 @@ dependencies {
     implementation(SupportLibs.DAGGER_HILT)
     implementation(CoroutineLibs.COROUTINE)
     implementation(ImageLoadingLibs.COIL)
+    implementation(NetworkLibs.RETROFIT)
+    implementation(NetworkLibs.GSON)
+    implementation(NetworkLibs.RETROFIT_GSON_CONVERTER)
+    debugImplementation(NetworkLibs.LOGGING_INTERCEPTOR)
 
     kapt(Kapts.ANDROIDX_LIFECYCLE_COMPILER)
     kapt(Kapts.DAGGER_HILT)

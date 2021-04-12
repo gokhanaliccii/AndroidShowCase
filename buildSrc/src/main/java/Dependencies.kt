@@ -20,6 +20,10 @@ object Versions {
     const val NAVIGATION_COMPONENTS = "2.3.5"
     const val DAGGER_HILT = "2.34-beta"
     const val COIL = "1.1.1"
+    const val RETROFIT = "2.6.0"
+    const val GSON = "2.8.5"
+    const val RETROFIT_GSON = "2.5.0"
+    const val LOGGING_INTERCEPTOR = "4.9.1"
 }
 
 object BuildPluginsVersion {
@@ -46,6 +50,13 @@ object ImageLoadingLibs{
 
 object CoroutineLibs{
     const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINE_ANDROID}"
+}
+
+object NetworkLibs{
+    const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
+    const val GSON = "com.google.code.gson:gson:${Versions.GSON}"
+    const val RETROFIT_GSON_CONVERTER = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT_GSON}"
+    const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR}"
 }
 
 object Kapts{
