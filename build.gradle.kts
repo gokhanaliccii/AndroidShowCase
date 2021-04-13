@@ -58,3 +58,10 @@ tasks {
         delete(rootProject.buildDir)
     }
 }
+
+tasks.register<Copy>("createApiKeyFile") {
+    from(rootProject.relativePath("apikey.properties.sample")){
+        rename { "apikey.properties" }
+    }
+    into(rootProject.rootDir)
+}
