@@ -11,4 +11,3 @@ val Result<*>.isSucceeded
 
 val Result<*>.isFailed
     get() = this is Result.Error
-

@@ -7,7 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-
 private const val BASE_URL = "https://api.nytimes.com/svc/books/v3/"
 
 class BestSellerService(
@@ -25,12 +24,17 @@ class BestSellerService(
 
     private fun okhttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS).apply {
+            .connectTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
+            .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS).apply {
                 interceptors.forEach { addInterceptor(it) }
             }
             .build()
     }
 
     val bestSellerAPI: BestSellerAPI = getRetrofit(okhttpClient()).create(BestSellerAPI::class.java)
+
+    companion object {
+        private const val CONNECTION_TIMEOUT = 30L
+        private const val READ_TIMEOUT = 30L
+    }
 }

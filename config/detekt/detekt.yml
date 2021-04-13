@@ -637,6 +637,7 @@ style:
     active: true
   NewLineAtEndOfFile:
     active: true
+    autoCorrect: true
   NoTabs:
     active: false
   OptionalAbstractKeyword:

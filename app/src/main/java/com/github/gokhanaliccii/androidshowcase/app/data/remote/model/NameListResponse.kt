@@ -1,23 +1,23 @@
 package com.github.gokhanaliccii.androidshowcase.app.data.remote.model
 
-
-/*
-{
-      "list_name": "Combined Print and E-Book Fiction",
-      "display_name": "Combined Print & E-Book Fiction",
-      "list_name_encoded": "combined-print-and-e-book-fiction",
-      "oldest_published_date": "2011-02-13",
-      "newest_published_date": "2016-03-20",
-      "updated": "WEEKLY"
-    }
-*/
+import com.google.gson.annotations.SerializedName
 
 class NameListResponse {
-    val list_name: String? = null
-    val display_name: String? = null
-    val list_name_encoded: String? = null
-    val oldest_published_date: String? = null
-    val newest_published_date: String? = null
+    @SerializedName("list_name")
+    val listName: String? = null
+
+    @SerializedName("display_name")
+    val displayName: String? = null
+
+    @SerializedName("list_name_encoded")
+    val listNameEncoded: String? = null
+
+    @SerializedName("oldest_published_date")
+    val oldestPublishedDate: String? = null
+
+    @SerializedName("newest_published_date")
+    val newestPublishedDate: String? = null
+
+    @SerializedName("updated")
     val updated: String? = null
 }
-

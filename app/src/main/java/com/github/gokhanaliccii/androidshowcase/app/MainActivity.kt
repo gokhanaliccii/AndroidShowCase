@@ -6,14 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 import com.github.gokhanaliccii.androidshowcase.app.data.remote.BestSellerService
 import com.github.gokhanaliccii.androidshowcase.app.data.remote.api.interceptor.ApiKeyInterceptor
 import com.github.gokhanaliccii.androidshowcase.app.databinding.ActivityMainBinding
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import okhttp3.logging.HttpLoggingInterceptor
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-     private val scope = MainScope()
+    private val scope = MainScope()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,14 +25,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val apiKeyInterceptor = ApiKeyInterceptor(BuildConfig.NY_TIMES_API_KEY)
-        val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
 
-        val bestSellerService = BestSellerService(interceptors =  listOf(apiKeyInterceptor, httpLoggingInterceptor))
+        val bestSellerService =
+            BestSellerService(interceptors = listOf(apiKeyInterceptor, httpLoggingInterceptor))
 
         scope.launch {
-            withContext(Dispatchers.IO){
-                bestSellerService.bestSellerAPI.getBestSellerCategories()?.let {
+            withContext(Dispatchers.IO) {
+                bestSellerService.bestSellerAPI.getBestSellerCategories().let {
                     Log.i(TAG, "data fetched ${it.results?.size}")
                 }
             }
@@ -40,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         scope.cancel()
     }
 
-    companion object{
+    companion object {
         const val TAG = "MainActivity"
     }
 }

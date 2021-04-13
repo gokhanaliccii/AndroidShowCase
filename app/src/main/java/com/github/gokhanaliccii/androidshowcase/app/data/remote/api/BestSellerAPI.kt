@@ -8,10 +8,9 @@ import retrofit2.http.Path
 
 interface BestSellerAPI {
 
-
     @GET("lists/current/{category}.json")
-    suspend fun getBestSellerBooks(@Path("category") category: String) : BaseResponse<List<BookResponse>>
+    suspend fun getBestSellerBooks(@Path("category") category: String): BaseResponse<List<BookResponse>>
 
     @GET("lists/names.json")
-    suspend fun getBestSellerCategories() : BaseResponse<List<NameListResponse>>
+    suspend fun getBestSellerCategories(): BaseResponse<List<NameListResponse>>
 }
