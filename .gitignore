@@ -325,3 +325,5 @@ fabric.properties
 
 # api key ignore
 apikey.properties
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
