@@ -25,6 +25,8 @@ jobs:
             ~/.gradle/caches/
             ~/.gradle/wrapper/
           key: cache-gradle
+      - name: Create a dummy apikey.properties file
+        run: ./gradlew createApiKeyFile
       - name: Run Gradle tasks
         run: ./gradlew build check --continue
       - name: Stop Gradle

@@ -1,3 +1,5 @@
+import Secrets.NY_TIMES_API_KEY
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -11,6 +13,8 @@ android {
     defaultConfig {
         minSdkVersion(Sdk.MIN_SDK_VERSION)
         targetSdkVersion(Sdk.TARGET_SDK_VERSION)
+
+        buildConfigField("String", "NY_TIMES_API_KEY", "\"$NY_TIMES_API_KEY\"")
 
         applicationId = AppCoordinates.APP_ID
         versionCode = AppCoordinates.APP_VERSION_CODE
@@ -60,6 +64,11 @@ dependencies {
     implementation(SupportLibs.DAGGER_HILT)
     implementation(CoroutineLibs.COROUTINE)
     implementation(ImageLoadingLibs.COIL)
+    implementation(NetworkLibs.RETROFIT)
+    implementation(NetworkLibs.GSON)
+    implementation(NetworkLibs.RETROFIT_GSON_CONVERTER)
+    implementation(NetworkLibs.OKHTTP)
+    implementation(NetworkLibs.LOGGING_INTERCEPTOR)
 
     kapt(Kapts.ANDROIDX_LIFECYCLE_COMPILER)
     kapt(Kapts.DAGGER_HILT)

@@ -1,0 +1,2 @@
+# Please create an api key on this from https://developer.nytimes.com and rename this file to apikey.properties
+NY_TIMES_API_KEY=XXX
